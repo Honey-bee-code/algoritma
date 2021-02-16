@@ -40,7 +40,6 @@ echo "<p>";
 // Thus we get the result 166833 + 99500 - 33165 = 233168.
 
 
-
 ?>
 
 <div>Hasil Javascript : <span id="hasil"></span></div>
