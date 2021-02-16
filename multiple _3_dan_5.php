@@ -1,3 +1,5 @@
+<h3>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.
+</h3>
 <?php
 
 for($i=0; $i<1000; $i = $i +3){
@@ -11,18 +13,39 @@ echo "<br>";
 echo "<br>";
 
 
-$total = 0;
+$total1 = 0;
 $max = 1000;
 
 for($i=0; $i<$max; $i++){
     if($i%3 == 0 || $i%5 == 0) {
-        $total = $total + $i;
+        $total1 = $total1 + $i;
     }
 }
 
 
-echo "Hasil PHP : ".$total;
+echo "Hasil PHP cara 1 : ".$total1;
 echo "<p>";
+
+$max = 999;
+$b3 = floor($max / 3);
+$b5 = floor($max / 5);
+$b15 = floor($max / 15);
+
+$c3 = 3*$b3*($b3+1)/2;
+$c5 = 5*$b5*($b5+1)/2;
+$c15 = 15*$b15*($b15+1)/2;
+
+$total2 = $c3+$c5-$c15;
+
+echo $b3;
+echo "<p>";
+echo $b5;
+echo "<p>";
+echo $b15;
+echo "<p>";
+echo "Hasil PHP cara 2 : ".$total2;
+echo "<p>";
+
 
 // Using the formula 1 + 2 + 3 + ... + n = n*(n+1)/2 instead of a code loop.
 
