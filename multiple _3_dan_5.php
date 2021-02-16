@@ -2,16 +2,42 @@
 </h3>
 <?php
 
-for($i=0; $i<1000; $i = $i +3){
+echo "Rumus induksi: 1 + 2 + 3 + … + n = n(n+1)/2 = n(n + 1)/2";
+echo "<br>";
+$n = $_POST['i'];
+$hasil = $n*($n+1)/2;
+echo "Jika n = ".$n;
+echo "<br>";
+echo "Maka hasil induksi dari ".$n." adalah : ".$hasil;
+?>
+<form action="" method="post">
+input: 
+<input type="number" name="i" value="<?=$n?>">
+hasil induksi: 
+<input type="text" value="<?=$hasil?>">
+<button type="submit" class="btn">Submit</button>
+</form>
+<?php
+echo "Ini sama dengan seperti, ";
+for($i=0; $i<$n; $i = $i+1){
+  echo $i."+";
+}
+echo $n."=".$hasil;
+echo "<p>";
+
+
+
+for($i=0; $i<$n; $i = $i +3){
   echo $i."|";
 }
 echo "<br>";
-for($i=0; $i<1000; $i = $i +5){
+for($i=0; $i<$n; $i = $i +5){
   echo $i."|";
 }
 echo "<br>";
 echo "<br>";
 
+//cara pertama
 
 $total1 = 0;
 $max = 1000;
@@ -19,6 +45,7 @@ $max = 1000;
 for($i=0; $i<$max; $i++){
     if($i%3 == 0 || $i%5 == 0) {
         $total1 = $total1 + $i;
+        // echo count($i%3 == 0);
     }
 }
 
@@ -26,7 +53,13 @@ for($i=0; $i<$max; $i++){
 echo "Hasil PHP cara 1 : ".$total1;
 echo "<p>";
 
-$max = 999;
+
+
+echo "<p>";
+
+//cara kedua
+
+$max = 1000;
 $b3 = floor($max / 3);
 $b5 = floor($max / 5);
 $b15 = floor($max / 15);
